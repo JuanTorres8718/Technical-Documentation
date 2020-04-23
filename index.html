@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Technical Documentation</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>  
+    <nav id="navbar">
+        <header id="navtitle">CSS Documentation</header>
+        <button type="button" id="btnnav" onclick="nav()">
+            <img id="imgnav" src="images/navb.png" alt="">
+            </button>
+        <section id="openClose">
+            <hr>
+            <a class="nav-link" href="#Introduction">Introduction</a>
+            <hr>
+            <a class="nav-link" href="#What_is_CSS_for?" class="nav-link">What is CSS for?</a>
+            <hr>
+            <a class="nav-link" href="#CSS_syntax">CSS syntax</a>
+            <hr>
+            <a class="nav-link" href="#Getting_started_with_CSS">Getting started with CSS</a>
+            <hr>
+            <a class="nav-link" href="#Starting_with_some_HTML">Starting with some HTML</a>
+            <hr>
+            <a class="nav-link" href="#Adding_CSS_to_our_document">Adding CSS to our document</a>
+            <hr>
+            <a class="nav-link" href="#How_CSS_is_structured">How CSS is structured</a>
+            <hr>
+            <a class="nav-link" href="#Applying_CSS_to_your_HTML">Applying CSS to your HTML</a>
+            <hr>
+            <a class="nav-link" href="#External_stylesheet">External stylesheet</a>
+            <hr>
+            <a class="nav-link" href="#Internal_stylesheet">Internal stylesheet</a>
+            <hr>
+            <a class="nav-link" href="#Inline_styles">Inline styles</a>
+            <hr>
+            <a class="nav-link" href="#Properties_and_values">Properties and values</a>
+            <hr>
+            <a class="nav-link" href="#References">References</a>
+            <hr id="hrunique">
+        </section> 
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p><strong>CSS</strong> (Cascading Style Sheets) allows you to create great-looking web pages, but how does
+                it work under the hood? This article explains what CSS is, with a simple syntax example, and also covers
+                some key terms about the language.</p>
+        </section>
+        <section class="main-section" id="What_is_CSS_for?">
+            <header>What is CSS for?</header>
+            <p>As we have mentioned before, CSS is a language for specifying how documents are presented to users — how
+                they are styled, laid out, etc.</p>
+            <p>A document is usually a text file structured using a markup language — HTML is the most common markup
+                language, but you may also come across other markup languages such as SVG or XML.</p>
+            <p>CSS can be used for very basic document text styling — for example changing the color and size of
+                headings and links. It can be used to create layout — for example turning a single column of text into a
+                layout with a main content area and a sidebar for related information. It can even be used for effects
+                such as animation. Have a look at the links in this paragraph for specific examples.</p>
+        </section>
+        <section class="main-section" id="CSS_syntax">
+            <header>CSS syntax</header>
+            <p>CSS is a rule-based language — you define rules specifying groups of styles that should be applied to
+                particular elements or groups of elements on your web page. For example "I want the main heading on my
+                page to be shown as large red text."</p>
+            <p>The following code shows a very simple CSS rule that would achieve the styling described above:</p>
+            <pre>
+                <code>
+    h1 {
+        color: red;
+        font-size: 5em;
+    }
+                </code>
+            </pre>
+            
+            <p>The rule opens with a selector . This selects the HTML element that we are going to style. In this case
+                we are styling level one headings <code>&lt;h1&gt;</code> </p>
+            <p>We then have a set of curly braces { }. Inside those will be one or more declarations, which take the
+                form of property and value pairs. Each pair specifies a property of the element(s) we are selecting,
+                then a value that we'd like to give the property.</p>
+            <p>Before the colon, we have the property, and after the colon, the value. CSS properties have different
+                allowable values, depending on which property is being specified. In our example, we have the color
+                property, which can take various color values. We also have the font-size property. This property can
+                take various size units as a value.</p>
+            <p>A CSS stylesheet will contain many such rules, written one after the other.</p>
+            <pre>
+                <code>
+    h1 {
+        color: red;
+        font-size: 5em;
+    }
+    
+    p {
+        color: black;
+    }
+                </code>
+            </pre>
+            
+            <p>You will find that you quickly learn some values, whereas others you will need to look up. The individual
+                property pages on MDN give you a quick way to look up properties and their values when you forget, or
+                want to know what else you can use as a value.</p>
+        </section>
+        <section class="main-section" id="Getting_started_with_CSS">
+            <header>Getting started with CSS</header>
+            <p>In this article we will take a simple HTML document and apply CSS to it, learning some practical things
+                about the language along the way.</p>
+            <ul>
+                <li><strong> Prerequisites:</strong> Basic computer literacy, basic software installed, basic knowledge of working with
+                    files, and HTML basics (study Introduction to HTML.)</li>
+                <li><strong> Objective:</strong> To understand the basics of linking a CSS document to an HTML file, and be able to do
+                    simple text formatting with CSS.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Starting_with_some_HTML">
+            <header>Starting with some HTML</header>
+            <p>Our starting point is an HTML document. You can copy the code from below if you want to work on your own
+                computer. Save the code below as index.html in a folder on your machine.</p>
+            <pre>
+                <code>
+    &lt;!doctype html&gt;
+        &lt;html lang="en"&gt;
+            &lt;head&gt;
+                &lt;meta charset="utf-8"&gt;
+                &lt;title>Getting started with CSS&lt;/title&gt;
+            &lt;/head &gt;
+
+            &lt;body&gt;
+
+                &lt;h1&gt;I am a level one heading&lt;/h1&gt;
+
+                &lt;p&gt;This is a paragraph of text. In the text is a&lt;span&gt;span element&lt;/span&gt; 
+                    and also a&lt;a href="http://example.com"&gt;link&lt;/a&gt;.&lt;/p&gt;
+
+                &lt;p&gt;This is the second paragraph. It contains an&lt;em&gt;emphasized&lt;/em&gt; element.&lt;/p&gt;
+
+                &lt;ul&gt;
+                    &lt;li&gt;Item one&lt;/li&gt;
+                    &lt;li&gt;Item two&lt;/li&gt;
+                    &lt;li&gt;Item&lt;em&gt;three&lt;/em&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+
+            &lt;/body&gt;
+
+        &lt;/html&gt;
+                </code>
+            </pre>
+        </section>
+        <section class="main-section" id="Adding_CSS_to_our_document">
+            <header>Adding CSS to our document</header>
+            <p>The very first thing we need to do is to tell the HTML document that we have some CSS rules we want it to
+                use. There are three different ways to apply CSS to an HTML document that you'll commonly come across,
+                however, for now, we will look at the most usual and useful way of doing so — linking CSS from the head
+                of your document.</p>
+            <p>Create a file in the same folder as your HTML document and save it as styles.css. The .css extension
+                shows that this is a CSS file.</p>
+            <p>To link styles.css to index.html add the following line somewhere inside the
+
+                <head> of the HTML document:</p>
+            <pre>
+                <code>
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+                </code>
+            </pre>
+            <p>This
+                &lt;link&gt; element tells the browser that we have a stylesheet, using the rel attribute, and the location of
+                that stylesheet as the value of the href attribute. You can test that the CSS works by adding a rule to
+                styles.css. Using your code editor add the following to your CSS file:</p>
+            <pre>
+                <code>
+    h1 {
+        color: red;
+        }
+                </code>
+            </pre>
+            
+            <p>Save your HTML and CSS files and reload the page in a web browser. The level one heading at the top of
+                the document should now be red. If that happens, congratulations — you have successfully applied some
+                CSS to an HTML document. If that doesn't happen, carefully check that you've typed everything correctly.
+            </p>
+            <p>You can continue to work in styles.css locally, or you can use our interactive editor below to continue
+                with this tutorial. The interactive editor acts as if the CSS in the first panel is linked to the HTML
+                document, just as we have with our document above.</p>
+        </section>
+        <section class="main-section" id="How_CSS_is_structured">
+            <header>How CSS is structured</header>
+            <p>Now that you have an idea about what CSS is and the basics of using it, it is time to look a little
+                deeper into the structure of the language itself. We have already met many of the concepts discussed
+                here; you can return to this one to recap if you find any later concepts confusing.</p>
+            <ul>
+                <li>
+                    Prerequisites: Basic computer literacy, basic software installed, basic knowledge of working with
+                    files, HTML basics (study Introduction to HTML), and an idea of How CSS works.
+                </li>
+                <li>
+                    Objective: To learn CSS's fundamental syntax structures in detail.
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="Applying_CSS_to_your_HTML">
+            <header>Applying CSS to your HTML</header>
+            <p>The first thing we will look at are the three methods of applying CSS to a document.</p>
+            <ol>
+                <li>External stylesheet</li>
+                <li>Internal stylesheet</li>
+                <li>Inline styles</li>
+            </ol>
+        </section>
+        <section class="main-section" id="External_stylesheet">
+            <header>External stylesheet</header>
+            <p>In the Getting started with CSS we linked an external stylesheet to our page. This is the most common and
+                useful method of attaching CSS to a document as you can link the CSS to multiple pages, allowing you to
+                style them all with the same stylesheet. In most cases, the different pages of a site will all look
+                pretty much the same, therefore you can use the same set of rules for the basic look and feel.</p>
+            <p>An external stylesheet is when you have your CSS written in a separate file with a .css extension, and
+                you reference it from an HTML
+                &lt;link&gt; element:</p>
+            <pre>
+                <code>
+    &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;meta charset="utf-8"&gt;
+                &lt;title&gt;My CSS experiment&lt;/title&gt;
+                &lt;link rel="stylesheet" href="styles.css"&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Hello World!&lt;/h1&gt;
+                &lt;p&gt;This is my first CSS example&lt;/p&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+                </code>
+            </pre>
+            <p>The CSS file might look something like this:</p>
+            <pre>
+                <code>
+    h1 {
+        color: blue;
+        background-color: yellow;
+        border: 1px solid black;
+        }
+        
+        p {
+        color: red;
+        }
+                </code>
+            </pre>
+           
+            <p>The href attribute of the
+                &lt;link&gt; element needs to reference a file on your filesystem.</p>
+            <p>In the example above, the CSS file is in the same folder as the HTML document, but you could place it
+                somewhere else and adjust the specified path to suit, for example:</p>
+            <pre>
+                <code>
+    &lt;!-- Inside a subdirectory called styles inside the current directory --&gt;
+    &lt;link rel="stylesheet" href="styles/style.css"&gt;
+    
+    &lt;!-- Inside a subdirectory called general, which is in a subdirectory called styles, inside the current directory --&gt;
+    &lt;link rel="stylesheet" href="styles/general/style.css"&gt;
+    
+    &lt;!-- Go up one directory level, then inside a subdirectory called styles --&gt;
+    &lt;link rel="stylesheet" href="../styles/style.css"&gt;
+                </code>
+            </pre>
+           
+        </section>
+        <section class="main-section" id="Internal_stylesheet">
+            <header>Internal stylesheet</header>
+            <p>An internal stylesheet is where you don't have an external CSS file, but instead place your CSS inside a
+                &lt;style&gt; element contained inside the HTML
+
+                &lt;head&gt;. &lt;br&gt;So the HTML would look like this:</p>
+            <pre>
+                <code>
+    &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;meta charset="utf-8"&gt;
+                &lt;title&gt;My CSS experiment&lt;/title&gt;
+                &lt;style&gt;
+                    h1 {
+                    color: blue;
+                    background-color: yellow;
+                    border: 1px solid black;
+                    }
+        
+                    p {
+                    color: red;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Hello World!&lt;/h1&gt;
+                &lt;p&gt;This is my first CSS example&lt;/p&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+                </code>
+            </pre> 
+            
+            <p>This can be useful in some circumstances (maybe you're working with a content management system where you
+                can't modify the CSS files directly), but it isn't quite as efficient as external stylesheets — in a
+                website, the CSS would need to be repeated across every page, and updated in multiple places if changes
+                were required.</p>
+        </section>
+        <section class="main-section" id="Inline_styles">
+            <header>Inline styles</header>
+            <p>Inline styles are CSS declarations that affect one element only, contained within a style attribute:</p>
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;meta charset="utf-8"&gt;
+                                &lt;title&gt;My CSS experiment&lt;/title&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;h1 style="color: blue;background-color: yellow;border: 1px solid black;"&gt;Hello World!&lt;/h1&gt;
+                                &lt;p style="color:red;"&gt;This is my first CSS example&lt;/p&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+                </code>
+            </pre>
+            
+            <p><strong> Please don't do this, unless you really have to! for three reason </strong></p>
+            <ul>
+                <li>It is really bad for maintenance (you might have to update the same information multiple times per
+                    document)</li>
+                <li>it also mixes your presentational CSS information with your HTML structural information, making the
+                    code harder to read and understand</li>
+                <li>Keeping different types of code separated makes for a much easier job for all who work on the code.
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="Properties_and_values">
+            <header>Properties and values</header>
+            <p>At its most basic level, CSS consists of two building blocks:</p>
+            <ul>
+                <li><strong> Properties:</strong> Human-readable identifiers that indicate which stylistic features
+                    (e.g. font-size, width, background-color) you want to change.</li>
+                <li><strong> Values:</strong> Each specified property is given a value, which indicates how you want to
+                    change those stylistic features (e.g. what you want to change the font, width or background color
+                    to.)</li>
+            </ul>
+            <p>The below image highlights a single property and value. The property name is color, and the value blue.
+            </p>
+            <img src="images/style.png" alt="">
+            <p>A property paired with a value is called a CSS declaration. CSS declarations are put within CSS
+                Declaration Blocks. This next image shows our CSS with the declaration block highlighted.</p>
+            <img src="images/declaration.png" alt="">
+            <p>Finally, CSS declaration blocks are paired with selectors to produce CSS Rulesets (or CSS Rules). Our
+                image contains two rules, one for the h1 selector and one for the p selector. The rule for h1 is
+                highlighted. </p>
+            <img src="images/rules.png" alt="">
+            <p><strong>Try looking up different values of the following properties, and writing CSS rules that apply
+                    them to different HTML elements:</strong></p>
+            <ul>
+                <li>font-size</li>
+                <li>width</li>
+                <li>background-color</li>
+                <li>color</li>
+                <li>border</li>
+            </ul>
+        </section>
+        <section class="main-section" id="References">
+            <header>References</header>
+        <ul>
+            <li>All the documentation in this is page is taken from <a
+                    href="https://developer.mozilla.org/en-US/docs/Learn/CSS">MDN</a> </li>
+        </ul>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

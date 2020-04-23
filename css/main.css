@@ -1,0 +1,124 @@
+
+
+header{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#navbar #navtitle{
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 26px;
+    font-weight: bold;
+    width: 84%;
+}
+
+#navbar #openClose{
+    text-align: center;
+}
+
+@media only screen and (max-width:750px){
+
+    body{
+        margin: 2px;
+        padding: 20px;
+    }
+
+
+
+    #navbar #openClose{
+        text-align: center;
+        height: 15vh;
+        overflow-y: scroll;
+        border: 2px solid grey;
+        display: none;
+    }
+    #navbar #btnnav{
+        margin-bottom:3px;
+    }
+    
+    #navbar #btnnav #imgnav{
+        width: 3vw;
+    }
+
+    #navbar #openClose .nav-link{
+        text-decoration: none;
+        font-size: 15px;
+        color: gray;
+    }
+
+    pre {
+        border:1px solid #A2A2A2;
+        background-color:#F1F1F1;
+        padding:0px;
+        width: 90vw;
+        overflow-x: scroll;
+        color:#0150c7;
+        overflow:auto
+    }
+
+
+}
+
+@media only screen and (min-width:750px){
+
+    body{
+        background-color: gray;
+        margin: 2px;
+    }
+
+
+    #navbar #btnnav {
+        display: none;
+    }
+
+    #navbar {
+        width: 30vw;
+        position: fixed;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow-y: scroll;
+        padding-bottom: 5px;
+    }
+
+    #navbar #openClose{
+        display: block;
+    }
+    
+    #navbar #openClose .nav-link{
+        text-decoration: none;
+        font-size: 20px;
+        color: gray;
+    }
+
+    pre {
+        border:1px solid #A2A2A2;
+        background-color:#F1F1F1;
+        padding:0px;
+        width: 60vw;
+        
+        color:#0150c7;
+        overflow:auto
+    }
+    
+    #main-doc{
+        overflow-y: auto;
+        position: absolute;
+        background-color: white;
+        padding: 25px;
+        margin-left: 30.5%;
+        border-left: 4px solid grey;
+    }
+    
+    
+    #main-doc .main-section p{
+        text-align: justify;
+    }
+    #navbar #openClose hr{
+        border-width: 15px;
+        margin: 0;
+    }
+    
+}
